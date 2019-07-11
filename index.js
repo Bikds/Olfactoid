@@ -156,9 +156,9 @@ function computeScent() {
 	document.getElementById("progressBar").style.width = "100%";
 	save_user();
 	//document.getElementById('submit').style.display = "inline";
-	alert(smellArray[0].scent + ": " + smellArray[0].value + "\n" + smellArray[1].scent + ": " +
-		smellArray[1].value + "\n" + smellArray[2].scent + ": " + smellArray[2].value + "\n" +
-		smellArray[3].scent + ": " + smellArray[3].value);
+	//alert(smellArray[0].scent + ": " + smellArray[0].value + "\n" + smellArray[1].scent + ": " +
+	//	smellArray[1].value + "\n" + smellArray[2].scent + ": " + smellArray[2].value + "\n" +
+	//	smellArray[3].scent + ": " + smellArray[3].value);
 
 	window.location = "file:///Users/biksharma/Documents/SCF/Olfactoid_v_9/thankyou.html";
 }
