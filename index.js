@@ -160,7 +160,7 @@ function computeScent() {
 		smellArray[1].value + "\n" + smellArray[2].scent + ": " + smellArray[2].value + "\n" +
 		smellArray[3].scent + ": " + smellArray[3].value);
 
-	window.location = "file:///Users/biksharma/Documents/SCF/Olfactoid_v_3_/thankyou.html";
+	window.location = "file:///Users/biksharma/Documents/SCF/Olfactoid_v_9/thankyou.html";
 }
 
 function backQuestion() {
