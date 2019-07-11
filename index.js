@@ -18,70 +18,70 @@ var questionOne = new Question(
 	"Turned around and waited in your car", [0, 2, 1, 0],
 	"Found a quiet place to sit and stay on your phone", [0, 1, 2, 0],
 	"Went to the kitchen to eat", [3, 0, 0, 0], false
-);
+	);
 var questionTwo = new Question(
 	"Which did you prefer?",
 	'<img src="Others/sunrise.png" class="optionImg">', [3, 0, 0, 3],
 	'<img src="Others/sunset.png" class="optionImg">', [0, 3, 3, 0],
 	"", [0, 0, 0, 0],
 	"", [0, 0, 0, 0], true
-);
+	);
 var questionThree = new Question(
 	"Imagine you were at home and you thought you heard a gunshot outside. What would you have done?",
 	"Ran outside to see what it was", [0, 0, 1, 2],
 	"Stopped what you were doing and headed to a safer spot", [0, 3, 0, 0],
 	"Ignored it because you thought you imagined it", [0, 1, 2, 0],
 	"Called the police", [2, 0, 0, 1], false
-);
+	);
 var questionFour = new Question(
 	"When someone was mad at you and giiving you the cold shoulder, you ... ",
 	"Tried to initiate a conversation to talk about your issues", [1, 0, 0, 2],
 	"Ignored them and avoided it", [0, 1, 2, 0],
 	"Reciprocated the cold shoulder", [2, 0, 1, 0],
 	"Made small talk to ease into a conversation", [1, 2, 0, 0], false
-);
+	);
 var questionFive = new Question(
 	"What did you typically do the night before an important exam?",
 	"You stayed up late to study", [0, 1, 2, 0],
 	"You had studied for a while, so you reviewed and then went to sleep on time", [0, 1, 0, 2],
 	"You had studied, but you would be worried and have difficulty falling asleep", [3, 0, 0, 0],
 	"You attempted to study but gotten distracted", [0, 2, 0, 1], false
-);
+	);
 var questionSix = new Question(
 	"How did you make important decisions?",
 	"You wavered between the options for days", [2, 0, 1, 0],
 	"You went with what your gut told you", [0, 0, 0, 3],
 	"You thought it through before making a choice and didn't worry about it afterwards", [0, 0, 2, 1],
 	"You made a list about the pros and cons of each option", [1, 2, 0, 0], false
-);
+	);
 var questionSeven = new Question(
 	"When working in a team with a member not contributing, what did you do?",
 	"You confronted them and told them to do their part", [0, 0, 2, 1],
 	"You did their part for them", [0, 1, 0, 2],
 	"You told a superior", [1, 2, 0, 0],
 	"You refused to put their name on the project", [2, 0, 1, 0], false
-);
+	);
 var questionEight = new Question(
 	"What do you remember noticing first about people you met?",
 	"Eyes", [0, 0, 0, 3],
 	"Hair", [3, 0, 0, 0],
 	"Hands", [0, 1, 2, 0],
 	"Smile", [0, 2, 1, 0], false
-);
+	);
 var questionNine = new Question(
 	"Which of the following is a disagreeable trait that you had?",
 	"You were stubborn", [0, 0, 3, 0],
 	"You were self-centered", [1, 2, 0, 0],
 	"You were impatient", [0, 0, 1, 2],
 	"You held grudges", [3, 0, 0, 0], false
-);
+	);
 var questionTen = new Question(
 	"How would your friends have described you?",
 	"Social, open to trying new things", [0, 0, 0, 4],
 	"Compassionate", [4, 0, 0, 0],
 	"Calm, rational", [0, 1, 3, 0],
 	"Quiet, thoughtful", [0, 3, 1, 0], false
-);
+	);
 //document.getElementById("option").style.backgroundColor = Transparent;
 var questionEleven = new Question(
 	"When you had a negative impression of someone, which of the following was most likely to change your opinion of them?",
@@ -89,17 +89,17 @@ var questionEleven = new Question(
 	"Seeing them give money to someone in need", [0, 1, 2, 0],
 	"Them making you laugh", [0, 0, 0, 3],
 	"Seeing them working diligently", [0, 2, 1, 0], false
-);
+	);
 var questionTwelve = new Question(
 	"Which of these shapes do you like the most?",
 	'<img src="Others/square.png" class="optionImg">', [0, 2, 1, 0],
 	'<img src="Others/circle.png" class="optionImg">', [2, 1, 0, 0],
 	'<img src="Others/triangle.png" class="optionImg">', [0, 0, 2, 1],
 	'<img src="Others/rectangle.png" class="optionImg">', [1, 0, 0, 2], true
-);
+	);
 
 var questionArray = [questionOne, questionTwo, questionThree, questionFour, questionFive, questionSix, questionSeven,
-	questionEight, questionNine, questionTen, questionEleven, questionTwelve];
+questionEight, questionNine, questionTen, questionEleven, questionTwelve];
 var currentQuestion = 0;
 var valueChosen;
 var totalScent = [0, 0, 0, 0];
@@ -109,13 +109,13 @@ function processScent(optionChosen) {
 	//process the scent totals
 	switch (optionChosen) {
 		case 0: valueChosen = questionArray[currentQuestion].optionA_val;
-			break;
+		break;
 		case 1: valueChosen = questionArray[currentQuestion].optionB_val;
-			break;
+		break;
 		case 2: valueChosen = questionArray[currentQuestion].optionC_val;
-			break;
+		break;
 		case 3: valueChosen = questionArray[currentQuestion].optionD_val;
-			break;
+		break;
 	}
 	//floral
 	totalScent[0] += valueChosen[0];
@@ -156,16 +156,16 @@ function computeScent() {
 	document.getElementById("progressBar").style.width = "100%";
 	save_user();
 	//document.getElementById('submit').style.display = "inline";
-	//alert(smellArray[0].scent + ": " + smellArray[0].value + "\n" + smellArray[1].scent + ": " +
-	//	smellArray[1].value + "\n" + smellArray[2].scent + ": " + smellArray[2].value + "\n" +
-	//	smellArray[3].scent + ": " + smellArray[3].value);
-
+	/*alert(smellArray[0].scent + ": " + smellArray[0].value + "\n" + smellArray[1].scent + ": " +
+		smellArray[1].value + "\n" + smellArray[2].scent + ": " + smellArray[2].value + "\n" +
+		smellArray[3].scent + ": " + smellArray[3].value);
+	*/
 	window.location = "file:///Users/biksharma/Documents/SCF/Olfactoid_v_9/thankyou.html";
 }
 
-function backQuestion() {
-	document.getElementById("back").style.display = "none";
-	currentQuestion--;
+	function backQuestion() {
+		document.getElementById("back").style.display = "none";
+		currentQuestion--;
 	//floral
 	totalScent[0] -= valueChosen[0];
 	//oriental
