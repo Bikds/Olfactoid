@@ -34,7 +34,7 @@ var questionThree = new Question(
 	"Called the police", [2, 0, 0, 1], false
 	);
 var questionFour = new Question(
-	"When someone was mad at you and giiving you the cold shoulder, you ... ",
+	"When someone was mad at you and giving you the cold shoulder, you ... ",
 	"Tried to initiate a conversation to talk about your issues", [1, 0, 0, 2],
 	"Ignored them and avoided it", [0, 1, 2, 0],
 	"Reciprocated the cold shoulder", [2, 0, 1, 0],
