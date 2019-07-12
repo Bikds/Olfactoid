@@ -25,6 +25,7 @@ function save_data() {
     localStorage.setItem("last", document.getElementById('user_last').value);
     localStorage.setItem("age", document.getElementById('user_age').value);
     localStorage.setItem("gender", document.getElementById('user_gender').value);
+    localStorage.setItem("country", document.getElementById('user_country').value);
     // window.location.href = "index.html";
     // Retrieve
     // document.getElementById("result").innerHTML = localStorage.getItem("lastname");
