@@ -32,7 +32,7 @@ input, select, #user_age, #user_gender{
 }
 
 select {
-	width: 169px;
+	width: 155px;
 }
 
 #user_age{
