@@ -22,7 +22,8 @@ html, body {
 	background-color: black;
 }
 
-input, select{
+
+input, select, #user_age, #user_gender{
 	margin: 10px;
 	padding: 10px;
 	background-color: black;
@@ -30,8 +31,17 @@ input, select{
 	font-family:"Lucida Console";
 }
 
-select{
-	width: 185px;
+select {
+	width: 169px;
+}
+
+#user_age{
+	width: 145px;
+}
+
+#user_gender{
+	height: 36px;
+	width: 169px;
 }
 
 .continue {
