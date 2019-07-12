@@ -234,16 +234,16 @@ function save_user() {
 
 	// creates and defines data object which will be pushed to Firebase
 	var data = {
-		user_id: uid,
-		user_email: localStorage.getItem("email"),
 		user_first: localStorage.getItem("first"),
 		user_last: localStorage.getItem("last"),
+		user_scent: smellArray[3].scent,
+		user_email: localStorage.getItem("email"),
 		user_age: localStorage.getItem("age"),
 		user_gender: localStorage.getItem("gender"),
-		user_scentArray: totalScent,
-		user_scent: smellArray[3].scent
+		user_country: localStorage.getItem("country"),
+		user_id: uid,
+		user_scentArray: totalScent
 	}
-
 	// push to firebase and clear the local storage
 	var updates = {};
 	updates['/users/' + uid] = data;
