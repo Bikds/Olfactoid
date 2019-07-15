@@ -53,7 +53,15 @@ function submitform() {
   }
 }
 
+
 function print_data(){
+  var databaseRef = firebase.database().ref('users/');
+  var container = document.getElementById("user_list");
+
+  databaseRef.once('value', function(snapshot) {
+     snapshot.forEach(function(childSnapshot) {
+     var childKey = childSnapshot.key;
+     var childData = childSnapshot.val();
 
     var user_card = document.createElement("div");
     container.appendChild(user_card);
@@ -75,10 +83,10 @@ function print_data(){
     }
     lastNode.innerHTML = holderName;
     user_card.appendChild(lastNode);
-  
     });
   });
 }
+
 
 function sendToArduino(scent){
   alert("Floral: " + scent[0] +
