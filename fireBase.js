@@ -41,15 +41,14 @@ function submitform() {
   var f = document.getElementsByTagName('form')[0];
   console.log("hi");
   if (f.checkValidity()) {
-    console.log("test1");
-    window.location.href = "index.html";
+    //console.log("test1");
+    window.location.href = "quiz.html";
     f.submit();
     save_data();
-    console.log("Test");
-    window.location.href = "index.html";
+    //console.log("Test");
+    window.location.href = "quiz.html";
   } else {
     alert("Please fill out all the fields. Remember your email field must include an '@' symbol");
 
   }
 }
-
