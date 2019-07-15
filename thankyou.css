@@ -1,0 +1,17 @@
+body {
+    //background-image: url('Others/img11.jpg');
+    background-color: black;
+    text-align: center;
+}
+
+#thankYou{
+  color: white;
+  font-size: 4em;
+  margin: 0;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+
+}
