@@ -53,3 +53,42 @@ function submitform() {
   }
 }
 
+function print_data(){
+  var databaseRef = firebase.database().ref('users/');
+  var container = document.getElementById("user_list");
+
+  databaseRef.once('value', function(snapshot) {
+     snapshot.forEach(function(childSnapshot) {
+     var childKey = childSnapshot.key;
+     var childData = childSnapshot.val();
+
+    var user_card = document.createElement("div");
+    container.appendChild(user_card);
+    user_card.className = "user_card";
+    user_card.addEventListener("click", function(){ sendToArduino(childData.user_scentArray); });
+
+    var firstNode = document.createElement("h1");
+    var holderName = childData.user_first;
+    if (holderName == "undefined"){
+      holderName = "John";
+    }
+    firstNode.innerHTML = holderName;
+    user_card.appendChild(firstNode);
+
+    var lastNode = document.createElement("h2");
+    holderName = holderName;
+    if (holderName == "undefined"){
+      holderName = "Doe";
+    }
+    lastNode.innerHTML = childData.user_last;
+    user_card.appendChild(lastNode);
+    });
+  });
+}
+
+function sendToArduino(scent){
+  alert("Floral: " + scent[0] +
+    "\nWarm/Spicy: " + scent[1] +
+    "\nWoodsy: " + scent[2] +
+    "\nFresh: " + scent[3]);
+}
