@@ -54,13 +54,6 @@ function submitform() {
 }
 
 function print_data(){
-  var databaseRef = firebase.database().ref('users/');
-  var container = document.getElementById("user_list");
-
-  databaseRef.once('value', function(snapshot) {
-     snapshot.forEach(function(childSnapshot) {
-     var childKey = childSnapshot.key;
-     var childData = childSnapshot.val();
 
     var user_card = document.createElement("div");
     container.appendChild(user_card);
@@ -69,19 +62,20 @@ function print_data(){
 
     var firstNode = document.createElement("h1");
     var holderName = childData.user_first;
-    if (holderName == "undefined"){
+    if (holderName == undefined){
       holderName = "John";
     }
     firstNode.innerHTML = holderName;
     user_card.appendChild(firstNode);
 
     var lastNode = document.createElement("h2");
-    holderName = holderName;
-    if (holderName == "undefined"){
+    holderName = childData.user_last;
+    if (holderName == undefined){
       holderName = "Doe";
     }
-    lastNode.innerHTML = childData.user_last;
+    lastNode.innerHTML = holderName;
     user_card.appendChild(lastNode);
+  
     });
   });
 }
