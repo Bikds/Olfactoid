@@ -41,14 +41,56 @@ function submitform() {
   var f = document.getElementsByTagName('form')[0];
   console.log("hi");
   if (f.checkValidity()) {
-    //console.log("test1");
+    console.log("test1");
     window.location.href = "quiz.html";
     f.submit();
     save_data();
-    //console.log("Test");
+    console.log("Test");
     window.location.href = "quiz.html";
   } else {
     alert("Please fill out all the fields. Remember your email field must include an '@' symbol");
 
   }
+}
+
+
+function print_data(){
+  var databaseRef = firebase.database().ref('users/');
+  var container = document.getElementById("user_list");
+
+  databaseRef.once('value', function(snapshot) {
+     snapshot.forEach(function(childSnapshot) {
+     var childKey = childSnapshot.key;
+     var childData = childSnapshot.val();
+
+    var user_card = document.createElement("div");
+    container.appendChild(user_card);
+    user_card.className = "user_card";
+    user_card.addEventListener("click", function(){ sendToArduino(childData.user_scentArray); });
+
+    var firstNode = document.createElement("h1");
+    var holderName = childData.user_first;
+    if (holderName == undefined){
+      holderName = "John";
+    }
+    firstNode.innerHTML = holderName;
+    user_card.appendChild(firstNode);
+
+    var lastNode = document.createElement("h2");
+    holderName = childData.user_last;
+    if (holderName == undefined){
+      holderName = "Doe";
+    }
+    lastNode.innerHTML = holderName;
+    user_card.appendChild(lastNode);
+    });
+  });
+}
+
+
+function sendToArduino(scent){
+  alert("Floral: " + scent[0] +
+    "\nWarm/Spicy: " + scent[1] +
+    "\nWoodsy: " + scent[2] +
+    "\nFresh: " + scent[3]);
 }
