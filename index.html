@@ -17,15 +17,12 @@
 		<h1>Welcome</h1>
 		<hr>
 		<form>
-			<input type="email" id="user_email" placeholder="Example@gmail.com" required>
-			<input type="text" id="user_first" placeholder="First Name" required>
-			<input type="text" id="user_last" placeholder="Last Name" required>
+			<input type="text" id="user_nickname" placeholder="Nickname" required>
 			<input type="number" id="user_age" placeholder="Age" required>
-			<input type="country" id="user_country" placeholder="Country/countries you grew up in" required>
 			<select name="gender" id="user_gender" required>
-				<option value="other">Other</option>
-				<option value="male">Male</option>
-				<option value="female">Female</option>
+				<option value="Prefer not to say">Prefer not to say</option>
+				<option value="Male">male</option>
+				<option value="Female">female</option>
 			</select> <br>
 			<input type="button" value="Submit" onclick="submitform()" id="submitButton">
 
