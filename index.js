@@ -227,20 +227,27 @@ function switchQuestion(currentQuestion) {
 
 var databaseRef = firebase.database().ref('users/');
 var database = firebase.database();
+var numOfUsers = 0;
+
+databaseRef.once('value', function (snapshot) {
+	numOfUsers = snapshot.numChildren();
+	//console.log(snapshot.numChildren());
+});
 
 function save_user() {
 	//var user_id = document.getElementById('user_id').value;
 	var uid = firebase.database().ref().child('users').push().key;
 
+	numOfUsers++;
+
+
 	// creates and defines data object which will be pushed to Firebase
 	var data = {
-		user_first: localStorage.getItem("first"),
-		user_last: localStorage.getItem("last"),
+		user_nickname: localStorage.getItem("nickName"),
 		user_scent: smellArray[3].scent,
-		user_email: localStorage.getItem("email"),
 		user_age: localStorage.getItem("age"),
 		user_gender: localStorage.getItem("gender"),
-		user_country: localStorage.getItem("country"),
+		user_number: numOfUsers,
 		user_id: uid,
 		user_scentArray: totalScent
 	}
