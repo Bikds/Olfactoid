@@ -6,7 +6,7 @@ var totalStars = 300;
 var star = [];
 
 function render() {
-  console.log("RESIZE");
+  //console.log("RESIZE");
   wWidth = window.innerWidth;
   wHeight = window.innerHeight;
   canvas.width = window.innerWidth;
@@ -102,5 +102,3 @@ function reload_page() {
 
 }
 */
-
-
