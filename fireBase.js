@@ -63,7 +63,10 @@ function print_data() {
       var firstNode = document.createElement("h1");
       var holderName = childData.user_first;
       if (holderName == undefined) {
-        holderName = "John";
+        holderName = childData.user_nickname;
+        if (holderName == undefined) {
+          holderName = "John";
+        }
       }
       firstNode.innerHTML = holderName;
       user_card.appendChild(firstNode);
@@ -71,7 +74,10 @@ function print_data() {
       var lastNode = document.createElement("h2");
       holderName = childData.user_last;
       if (holderName == undefined) {
-        holderName = "Doe";
+        holderName = childData.user_number;
+        if (holderName == undefined) {
+          holderName = "Doe";
+        }
       }
       lastNode.innerHTML = holderName;
       user_card.appendChild(lastNode);
