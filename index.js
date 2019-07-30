@@ -45,7 +45,7 @@ var questionFive = new Question(
 	"You stayed up late to study", [0, 1, 2, 0],
 	"You had studied for a while, so you reviewed and then went to sleep on time", [0, 2, 1, 0],
 	"You had studied, but you would be worried and have difficulty falling asleep", [3, 0, 0, 0],
-	"You attempted to study but gotten distracted", [0, 2, 0, 1], false
+	"You attempted to study but got distracted", [0, 2, 0, 1], false
 );
 var questionSix = new Question(
 	"How did you make important decisions?",
